@@ -1,0 +1,1 @@
+gcc src/*.c -o sas.exe

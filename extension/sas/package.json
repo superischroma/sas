@@ -1,0 +1,25 @@
+{
+    "name": "sas",
+    "displayName": "super's Assembler",
+    "description": "Syntax highlighting for this goofy assembly language.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "sas",
+            "aliases": ["super's Assembler"],
+            "extensions": [".sas"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "sas",
+            "scopeName": "source.sas",
+            "path": "./syntaxes/sas.tmLanguage.json"
+        }]
+    }
+}

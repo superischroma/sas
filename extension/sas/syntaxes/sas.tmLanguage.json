@@ -1,0 +1,95 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "sas",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#variables"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"begin": "//",
+					"beginCaptures": {
+						"0": {
+							"name": "comment.line.double-slash"
+						}
+					},
+					"end": "\\n",
+					"name": "comment.line.double-slash.sas"
+				},
+				{
+					"begin": "/\\*",
+					"beginCaptures": {
+						"0": {
+							"name": "comment.block.slash-asterisk"
+						}
+					},
+					"end": "\\*/",
+					"name": "comment.block.sas"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.sas",
+				"match": "\\.(global)\\b"
+			},
+			{
+				"name": "constant.language.sas",
+				"match": "\\b(rax|rbx|rcx|rdx|rsi|rdi|rip|rbp|rsp)\\b"
+			}]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "constant.character.escape",
+					"match": "\\\\"
+				},
+				{
+					"name": "string.quoted.double.sas",
+					"begin": "\"",
+					"end": "\""
+				},
+				{
+					"name": "string.quoted.single.sas",
+					"begin": "'",
+					"end": "'"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.numeric.sas",
+					"match": "\\b0x[a-fA-F0-9]+L*l*|0b[0-1]+L*l*|0o[a-fA-F0-9]+L*l*|[0-9]+\\.[0-9]+D*F*d*f*|[0-9]+D*F*d*f*L*l*\\b"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "entity.name.function.sas",
+					"match": "\\b((mov)[bwlq]|ret)\\b"
+				}
+			]
+		}
+	},
+	"scopeName": "source.sas"
+}

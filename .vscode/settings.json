@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "string.h": "c",
+        "sas.h": "c",
+        "*.inc": "c"
+    }
+}
